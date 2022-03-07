@@ -147,9 +147,12 @@ $text-font-family: "Roboto", sans-serif;
             margin-top: 24px;
             padding: 14px 20px;
             border-radius: 50px;
+            transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
             &:hover {
-                transition: filter 0.2s;
+                transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
                 filter: contrast(150%);
+                box-shadow: 10px 10px 30px rgba(0 0 0 / 20%);
+                transform: scale(1.02);
             }
         }
     }
@@ -514,7 +517,7 @@ $text-font-family: "Roboto", sans-serif;
                         width: 100%;
                         justify-content: space-between;
                         .menu-part-content-card-body-description-text {
-                            font-size: 18px;
+                            font-size: 15px;
                             margin: 0 4px 0 0;
                             white-space: nowrap;
                             overflow: hidden;
@@ -560,10 +563,12 @@ $text-font-family: "Roboto", sans-serif;
             font-family: $text-font-family;
             font-size: 16px;
             filter: contrast(100%);
-            transition: filter 0.2s;
+            transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
             &:hover {
-                transition: filter 0.2s;
+                transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
                 filter: contrast(150%);
+                box-shadow: 10px 10px 30px rgba(0 0 0 / 20%);
+                transform: scale(1.02);
             }
         }
     }

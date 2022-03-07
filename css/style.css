@@ -123,10 +123,13 @@
   margin-top: 24px;
   padding: 14px 20px;
   border-radius: 50px;
+  transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .header .header-brand .header-brand-button:hover {
-  transition: filter 0.2s;
+  transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
   filter: contrast(150%);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
 }
 
 /* Section Functioning */
@@ -559,7 +562,7 @@
   justify-content: space-between;
 }
 .menu .menu-container .menu-part .menu-part-content-card .menu-part-content-card-body .menu-part-content-card-body-description .menu-part-content-card-body-description-text {
-  font-size: 18px;
+  font-size: 15px;
   margin: 0 4px 0 0;
   white-space: nowrap;
   overflow: hidden;
@@ -599,11 +602,13 @@
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   filter: contrast(100%);
-  transition: filter 0.2s;
+  transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .menu .menu-container .command-button:hover {
-  transition: filter 0.2s;
+  transition: filter 0.2s, box-shadow 0.2s, transform 0.2s;
   filter: contrast(150%);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
 }
 
 @keyframes fadeInShow {
