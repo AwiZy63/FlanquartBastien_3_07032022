@@ -327,3 +327,247 @@ $text-font-family: "Roboto", sans-serif;
 }    
 
 
+
+/* Menu */
+
+.menu {
+    background-color: $light-gray-color-primary;
+
+    .menu-background-image {
+        width: 100%;
+        height: 266px;
+        object-fit: cover;
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 12px 18px;
+        border-radius: 32px 32px 0 0;
+        background-color: $light-gray-color-primary;
+        transform: translate(0, -50px);
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            .menu-header-title {
+                font-family: $title-font-family;
+                font-size: 26px;
+                font-weight: 300;
+            }
+
+            
+            
+            .menu-header-like-button {
+                background-color: transparent;
+                margin-right: 16px;
+                padding: 0;
+                border: none;
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    .menu-header-icon::before {
+                        font-family: "Font Awesome 5 Free";
+                        content: "\f004";
+                        font-weight: bold;
+                        color: red;
+                        font-size: 24px;
+                        transition: color 0.1s;
+                    }
+                }
+                .menu-header-icon {
+                    font-size: 24px;
+                    transition: color 0.5s;
+                }
+            }
+        }
+
+        .menu-part {
+            margin-bottom: 32px;
+
+            .menu-part-title {
+                text-transform: uppercase;
+                font-family: $text-font-family;
+                font-weight: 300;
+                font-size: 18px;
+                position: relative;
+                margin-bottom: 24px;
+                &::after {
+                    position: absolute;
+                    width: 40px;
+                    height: 3px;
+                    left: 0;
+                    top: calc(100% + 40%);
+                    background-color: $tertiary-color;
+                    content: "";
+                }
+            }
+
+            @for $i from 1 to 12 {
+                .menu-part-content-card {
+                    opacity: 0;
+                    &:nth-child(#{$i}) {
+                        opacity: 0;
+                        animation: fadeInShow ease-in 1;
+                        animation-fill-mode: forwards;
+                        animation-duration: 0.8s;
+                        animation-delay: 0.1s * $i;
+                    }
+                }
+            }
+
+            .menu-part-content-card {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $text-font-family;
+                text-align: left;
+                background-color: white;
+                border-radius: 15px;
+                border: none;
+                padding: 0;
+                height: 68px;
+                width: 300px;
+                max-width: 300%;
+                margin-top: 16px;
+
+                &:hover {
+                    overflow: hidden;
+                    .menu-part-content-card-body {
+                        transition: width 300ms;
+                        width: 75%;
+                        animation: cardWidth 320ms ease-in-out normal;
+                        animation-fill-mode: both;
+                    }
+
+                    .menu-part-content-card-button {
+                        transition: width 300ms;
+                        width: 60px;
+                        animation: rightAnimation 320ms ease-in-out normal;
+                        animation-fill-mode: both;
+                        overflow: hidden;
+                        .check-circle {
+                            animation: spinner 420ms ease-in-out normal;
+                            animation-fill-mode: both;
+
+                        }
+                    }
+                }
+                .menu-part-content-card-body {
+                    margin: 16px 8px 16px 16px;
+                    width: 100%;
+                    transition: width 300ms;
+                    .menu-part-content-card-body-title {
+                        font-size: 16px;
+                        margin: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-width: 230px;
+                    }
+                    .menu-part-content-card-body-description {
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        .menu-part-content-card-body-description-text {
+                            font-size: 18px;
+                            margin: 0 4px 0 0;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            max-width: 230px;
+                        }
+                        .menu-part-content-card-body-description-price {
+                            font-weight: bold;
+                            margin-right: 8px;
+                        }
+                    }
+                }
+                .menu-part-content-card-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: $tertiary-color;
+                    height: 100%;
+                    width: 0;
+                    transform-origin: right 50%;
+                    border-radius: 0 15px 15px 0;
+                    overflow: hidden;
+                    transition: width 300ms;
+
+                    .check-circle {
+                        font-size: 20px;
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .command-button {
+            display: inline-block;
+            color: white;
+            background: linear-gradient(0.5turn, $secondary-color, $primary-color);
+            box-shadow: 0 3px 10px rgba(0 0 0 / 7%);
+            text-decoration: none;
+            border-radius: 50px;
+            text-align: center;
+            margin: 16px 0;
+            padding: 14px 48px;
+            font-family: $text-font-family;
+            font-size: 16px;
+            filter: contrast(100%);
+            transition: filter 0.2s;
+            &:hover {
+                transition: filter 0.2s;
+                filter: contrast(150%);
+            }
+        }
+    }
+}
+
+@keyframes fadeInShow {
+    0% {
+        transform: translate(0, 5%);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0, 2.5%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes rightAnimation {
+    0% {
+        transform: translate(60px, 0);
+    }
+    100% {
+        transform: translate(0px, 0);
+    }
+}
+
+@keyframes cardWidth {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: 75%;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
