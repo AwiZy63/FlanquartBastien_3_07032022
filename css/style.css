@@ -179,9 +179,11 @@
   flex-direction: column;
   box-shadow: 0px 8px 10px 0px #b1b1b1;
   z-index: 997;
+  transition: filter 0.2s, transform 0.2s;
 }
 .restaurants-cards .restaurants-card:hover {
-  transition: filter 0.2s;
+  transition: filter 0.2s, transform 0.2s;
+  transform: scale(1.02);
   filter: contrast(110%);
 }
 .restaurants-cards .restaurants-card .restaurants-card-new {
@@ -263,6 +265,7 @@
   font-family: "Roboto", sans-serif;
   color: white;
   text-decoration: none;
+  transition: text-decoration 0.2s;
 }
 .footer .footer-links .footer-link:nth-child(-n+2) {
   font-weight: 500;
@@ -275,6 +278,10 @@
 }
 .footer .footer-links .footer-link i {
   font-size: 12px;
+}
+.footer .footer-links .footer-link:hover {
+  transition: text-decoration 0.2s;
+  text-decoration: underline;
 }
 
 /* Menu */
@@ -593,6 +600,83 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .functioning-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: dense;
+    gap: auto;
+  }
+  .functioning-cards .functioning-card {
+    max-width: 312px;
+    margin: 0 auto;
+  }
+
+  .restaurants-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: dense;
+    gap: auto;
+  }
+  .restaurants-cards .restaurants-card {
+    margin: 0 auto;
+    max-width: 356px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .functioning-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .functioning .functioning-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+  .functioning .functioning-cards {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+
+  .restaurants .restaurants-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+  .restaurants .restaurants-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+  .restaurants .restaurants-cards .restaurants-card {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 356px;
+  }
+
+  .footer .footer-title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+  .footer .footer-links {
+    display: grid;
+    flex-direction: column;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
   }
 }
 
