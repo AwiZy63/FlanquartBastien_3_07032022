@@ -655,7 +655,6 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: dense;
-    gap: auto;
   }
   .functioning-cards .functioning-card {
     max-width: 312px;
@@ -667,7 +666,6 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: dense;
-    gap: auto;
   }
   .restaurants-cards .restaurants-card {
     margin: 0 auto;
